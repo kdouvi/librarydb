@@ -1,0 +1,81 @@
+{% extends "global_layout.html" %}
+{% block title %}
+Lib.gr
+{% endblock title %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>LibraryDB</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form action="/login" method="post">
+        <div class="container" id="row-container">
+            <table id="signint">
+                <tr>
+                    <td>
+                        Username:
+                    </td>
+        
+                    <td>
+                        <input type="text" name="username" placeholder="Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:
+                    </td>
+        
+                    <td>
+                        <input type="password" name="password" placeholder="Password">
+                    </td>
+                    <td>
+                        <button type="submit">Log In</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form> 
+    <h5>{{error_msg}}</h5>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container" id="row-container">
+        <td> 
+            Please contact your school librarian (Operator) to create an account.
+            <br>
+            <br>
+            If you are eligible to become your school's Operator please <a title="{{ adminfo[0][0] }} {{ adminfo[0][1] }} {{ adminfo[0][2] }}" href="mailto:{{adminfo[0][2]}}"> contact the administrator </a> so they can approve and file your registration.
+        </td>
+        
+    </div>
+
+{% endblock content %}

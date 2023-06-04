@@ -1,0 +1,48 @@
+{% extends "global_layout.html" %}
+{% block content %}
+
+<h1>Welcome to Operator Home Page</h1>
+    
+<form action="/landing" method="post">
+    <div class="container" id="row-container">
+        {% include "flash_messages.html" %}
+        <div class="row" id="row">
+            <div class="col-md-4">
+                <div class="card" id="card-container-layout">
+                    <div class="card-body d-flex flex-column" id="card">
+                        <h4 class="card-title">Book Catalogue</h4>
+                        <p class="card-text" id="paragraph">Search all books</p>
+                        <div class="mt-auto">
+                        <a class="btn btn-primary" id="show-btn" href="/op/catalogue">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="card-container-layout">
+                    <div class="card-body d-flex flex-column" id="card">
+                        <h4 class="card-title">View overdue loans</h4>
+                        <p class="card-text" id="paragraph">Show all users with overdue books<br></p>
+                        <div class="mt-auto">
+                        <a class="btn btn-primary" id="show-btn" href="/op/overdue_loans">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="card-container-layout">
+                    <div class="card-body d-flex flex-column" id="card">
+                        <h4 class="card-title">View evaluation averages</h4>
+                        <p class="card-text" id="paragraph">Show average evaluation per user and per genre<br></p>
+                        <div class="mt-auto">
+                        <a class="btn btn-primary" id="show-btn" href="/op/eval_average">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p> </p>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

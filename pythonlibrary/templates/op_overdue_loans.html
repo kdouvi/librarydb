@@ -1,0 +1,48 @@
+{% extends "global_layout.html" %}
+
+{% block content %}
+<form action="/op/overdue_loans" method="post">
+    <div class="container">
+        {% include "flash_messages.html" %}
+        <h3>Users with overdue loans</h3>
+        <div class="row" id="row">
+            <div class="col-md-12">
+                <div class="card" id="card-container">
+                    <div class="card-body" id="card">
+                        <td>
+                            User name:
+                            <input type="text" name="first name" placeholder="fist name">
+                            <br>
+                            User surname:
+                            <input type="text" name="last name" placeholder="last name">
+                            <br>
+                            At least:
+                            <input type="number" name="days overdue" placeholder="days overdue" "value"=0>
+                            days overdue<br> 
+                            <button type="submit">Search</button>
+                        </td>
+                        <table class="table table-striped table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th> Username</th>
+                                    <th>Full name</th>
+                                    <th>Days overdue</th>
+                                </tr>
+                            </thead>
+                           <tbody>
+                                {% for user in users %}
+                                    <tr>
+                                        <td> {{ user[0] }} </td>
+                                        <td> {{ user[1] }} {{ user[2] }} </td>
+                                        <td> {{ user[3] }} </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

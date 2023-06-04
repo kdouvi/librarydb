@@ -1,0 +1,32 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <h3>{{pageTitle}}</h3>
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                    <table class="table table-striped table-sm table-borderlessg">
+                        <thead>
+                            <tr>
+                                <th>Operator First Name</th>
+                                <th>Operator Last Name</th>
+                                <th>No. of books loaned</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for operator in ops %}
+                            <tr>
+                                <td> {{ operator[0] }} {{ operator[1] }} </td>
+                                <td> {{ operator[2] }} </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<form action="/op/catalogue" method="post">
+    <div class="container">
+        {% include "flash_messages.html" %}
+        <h3>Search all books</h3>
+        <div class="row" id="row">
+            <div class="col-md-12">
+                <div class="card" id="card-container">
+                    <div class="card-body" id="card">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm table-borderless" id="content-table">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            Title:  
+                                            <input type="text" name="title" placeholder="title">
+                                            <br>
+                                            Author:
+                                            <input type="text" name="author" placeholder="author">
+                                            <br>
+                                            Genre:
+                                            <input type="text" name="genre" placeholder="genre">
+                                            <br>
+                                            <label for="copies">Sort by copies:</label>
+                                            <select name="copies" id="copies">
+                                                <option value="-">-</option>
+                                                <option value="asc">ascending</option>
+                                                <option value="desc">descending</option>
+                                            </select>
+                                            <button type="submit">Search</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for book in books %}
+                                        <tr>
+                                            <td>{{ book[0] }}</td> 
+                                            <td>{{ book[1] }} {{ book[2] }}</td> 
+                                            <td>{{ book[3] }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "global_layout.html" %}
+{% block title %}
+Lib.gr
+{% endblock title %}
+{% block content %}
+    <h1>LibrariesDB</h1>
+    <form action="/login" method="post">
+        <table>
+            <tr>
+              <h2> 
+                !Reservation Successful! 😎
+              </h2>
+              <td>
+                <div class="mt-auto">
+                  <a class="btn btn-primary" id="show-btn" href="/user/catalogue">OK!</a>
+                </div>
+              </td>
+            </tr>
+          </table>
+    </form> 
+
+{% endblock content %}

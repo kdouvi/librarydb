@@ -1,0 +1,42 @@
+{% extends "global_layout.html" %}
+
+{% block content %}
+
+<h1>Welcome to Student home Page</h1>
+    
+<form action="/landing" method="post">
+    <div class="container" id="row-container">
+        {% include "flash_messages.html" %}
+        <div class="row" id="row">
+            <div class="col-md-4">
+                <div class="card" id="card-container-layout">
+                    <div class="card-body d-flex flex-column" id="card">
+                        <h4 class="card-title">View Books</h4>
+                        <p class="card-text" id="paragraph">Show catalogue</p>
+                        <div class="mt-auto">
+                        <a class="btn btn-primary" id="show-btn" href="/user/catalogue">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="card-container-layout">
+                    <div class="card-body d-flex flex-column" id="card">
+                        <h4 class="card-title">View loans</h4>
+                        <p class="card-text" id="paragraph">Show loans, active and past<br></p>
+                        <div class="mt-auto">
+                        <a class="btn btn-primary" id="show-btn" href="/user/loans_and_reservations">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    <th> 
+        You have {{ token[0][0] }} loan token(s) left this week
+    </th>
+    </div>
+    
+</form>
+
+{% endblock content %}

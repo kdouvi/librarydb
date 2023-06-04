@@ -1,0 +1,31 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <h3>{{pageTitle}}</h3>
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                    <table class="table table-striped table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th><i><u>Author Name</u></i></th>
+                                <th><i><u>No. of books written</u></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for author in authors %}
+                            <tr>
+                                <td> {{ author[0] }} {{ author[1] }}</td>
+                                <td> {{ author[2] }} </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
